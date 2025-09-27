@@ -1,0 +1,7 @@
+{
+  "name": "shellscript_knock_160",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "developer"
+}
