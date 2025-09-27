@@ -23,3 +23,6 @@ seq 100 | grep "[^02468]$" | xargs
 
 # 先頭の文字で始まり先頭の文字で行末が終わる文字を検索
 seq 100 | grep -E "^(.)\1$" | xargs
+
+# ファイル名の検索
+grep "\.exe$" ../../qdata/1/files.txt
