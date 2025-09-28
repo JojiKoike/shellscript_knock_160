@@ -22,4 +22,4 @@ time ls ../../qdata/2/img/*.png | sed 's/\.png$//' | xargs -P$(nproc) -I@ conver
 cat ../../qdata/9/log_range.log | sed -n '/24\/Dec\/2016 21:..:../,/25\/Dec\/2016 03:..:../p'
 
 # 見出しの記法の置換
-cat ../../qdata/10/headings.md | sed -r 's/^## +(.*)/\1\n---/' | sed -r 's/^# +(.*)/\1\n====/'
+cat ../../qdata/10/headings.md | sed -r 's/^## +(.*)/\1\n---/' | sed -r 's/^# +(.*)/\1\n===/'
