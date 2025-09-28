@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	gnupg2 \
 	imagemagick \
 	file \
+	rename \
 	&& rm -rf /var/lib/apt/lists/*
 
 # タイムゾーンの設定
