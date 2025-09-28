@@ -20,3 +20,6 @@ cat ../../qdata/5/ntp.conf | awk '$1=="pool"' | awk '{print $2}'
 
 # 端末に模様を描く
 seq 5 | awk '{for(i=1;i<$1;i++){printf " "};print "x"}' | tac
+
+# 消費税
+cat ../../qdata/7/kakeibo.txt | awk '{tax = ($1<"20191001"||$2~"^\*") ? 1.08 : 1.1; print $0,tax}' | awk '{print int($3*$4)}' | awk '{a+=$1}END{print a}'
