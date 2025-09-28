@@ -23,3 +23,6 @@ seq 5 | awk '{for(i=1;i<$1;i++){printf " "};print "x"}' | tac
 
 # 消費税
 cat ../../qdata/7/kakeibo.txt | awk '{tax = ($1<"20191001"||$2~"^\*") ? 1.08 : 1.1; print $0,tax}' | awk '{print int($3*$4)}' | awk '{a+=$1}END{print a}'
+
+# ログの集計
+awk -F: '{print $(NF-2)}' ../../qdata/8/access.log | awk '$1<"12"{print "午前"}$1>="12"{print "午後"}' | sort | uniq -c
