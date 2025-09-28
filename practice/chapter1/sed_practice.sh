@@ -17,3 +17,6 @@ echo クロロメチルエチルエーテル | sed -E 's/(メチル)(エチル)/
 
 # 画像ファイルの一括変換
 time ls ../../qdata/2/img/*.png | sed 's/\.png$//' | xargs -P$(nproc) -I@ convert @.png @.jpg
+
+# ログの抽出
+cat ../../qdata/9/log_range.log | sed -n '/24\/Dec\/2016 21:..:../,/25\/Dec\/2016 03:..:../p'
