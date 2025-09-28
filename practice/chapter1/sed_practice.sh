@@ -23,3 +23,6 @@ cat ../../qdata/9/log_range.log | sed -n '/24\/Dec\/2016 21:..:../,/25\/Dec\/201
 
 # 見出しの記法の置換
 cat ../../qdata/10/headings.md | sed -r 's/^## +(.*)/\1\n---/' | sed -r 's/^# +(.*)/\1\n===/'
+
+# 議事録の整理
+cat ../../qdata/11/gijiroku.txt | xargs -n2 | sed 's/^すず/鈴木/;s/^さと/佐藤/;s/^やま/山田/;s/ /:/;s/$/\n/'
