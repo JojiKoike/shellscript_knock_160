@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	imagemagick \
 	file \
 	rename \
+	pandoc \
 	&& rm -rf /var/lib/apt/lists/*
 
 # タイムゾーンの設定
