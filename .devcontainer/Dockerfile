@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	openssh-client \
 	gnupg2 \
 	imagemagick \
+	file \
 	&& rm -rf /var/lib/apt/lists/*
 
 # タイムゾーンの設定
