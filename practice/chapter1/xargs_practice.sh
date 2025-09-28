@@ -10,3 +10,9 @@ seq 4 | xargs -n2 mv
 
 # xargsが受け取った値を変数として使う
 seq 4 | xargs -I@ mkdir dir_@
+
+# ファイル名の一括変更
+mkdir ./tmp
+cd ./tmp
+seq 1000 | xargs -P$(nproc) touch
+time seq -w 1000 | awk '{print $1,$1}' | sed 's/^0*/mv /' | xargs -P$(nproc) -I@ sh -c @
