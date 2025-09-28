@@ -17,3 +17,6 @@ seq 5 | awk 'BEGIN{a=0}$1%2==0{printf("%s 偶数\n", $1)}$1%2{printf("%s 奇数\
 
 # 設定ファイルからの情報抽出
 cat ../../qdata/5/ntp.conf | awk '$1=="pool"' | awk '{print $2}'
+
+# 端末に模様を描く
+seq 5 | awk '{for(i=1;i<$1;i++){printf " "};print "x"}' | tac
