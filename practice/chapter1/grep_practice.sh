@@ -21,8 +21,17 @@ seq 100 | grep "[02468]$" | xargs
 # 指定した候補のいずれか以外で行末が終わる文字を検索
 seq 100 | grep "[^02468]$" | xargs
 
+# 切り出し
+echo 中村 山田 田代 上田 | grep -o "[^ ]田" | xargs
+
 # 先頭の文字で始まり先頭の文字で行末が終わる文字を検索
 seq 100 | grep -E "^(.)\1$" | xargs
 
 # ファイル名の検索
 grep "\.exe$" ../../qdata/1/files.txt
+
+# 特定のファイルの削除
+mkdir ./tmp
+cd ./tmp
+seq 1000 | sed 's/^/echo $RANDOM > /' | bash
+grep -l '^10$' -R | xargs rm
