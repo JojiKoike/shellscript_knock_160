@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	file \
 	rename \
 	pandoc \
+	less \
 	&& rm -rf /var/lib/apt/lists/*
 
 # タイムゾーンの設定
