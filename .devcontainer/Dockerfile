@@ -1,5 +1,5 @@
 # Debian 13 (trixie) のスリムイメージをベースに使用
-FROM debian:trixie-20250908-slim
+FROM debian:trixie-20250929-slim
 # タイムゾーンの設定（必要に応じて）
 ENV TZ=Asia/Tokyo
 ENV USERNAME=developer
@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	rename \
 	pandoc \
 	less \
+	procps \
 	&& rm -rf /var/lib/apt/lists/*
 
 # タイムゾーンの設定
