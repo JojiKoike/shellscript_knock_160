@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	pandoc \
 	less \
 	procps \
+	psmisc \
 	&& rm -rf /var/lib/apt/lists/*
 
 # タイムゾーンの設定
